@@ -98,6 +98,10 @@ class ContentFiltersEpub(private val userPropertiesPath: String?) : ContentFilte
         endIncludes.add(getHtmlLink("/styles/$cssStyle-after.css"))
         endIncludes.add(getHtmlScript("/scripts/touchHandling.js"))
         endIncludes.add(getHtmlScript("/scripts/utils.js"))
+        //ADDING MARKJS RELATED FILES (JS & CSS)
+        endIncludes.add(getHtmlLink("/styles/mark.css"))
+        endIncludes.add(getHtmlScript("/scripts/mark.min.js"))
+        endIncludes.add(getHtmlScript("/scripts/jquery-3.3.1.min.js"))
 
         for (element in beginIncludes) {
             resourceHtml = StringBuilder(resourceHtml).insert(beginHeadIndex, element).toString()
@@ -168,6 +172,8 @@ class ContentFiltersEpub(private val userPropertiesPath: String?) : ContentFilte
         val includes = mutableListOf<String>()
         includes.add(getHtmlScript("/scripts/touchHandling.js"))
         includes.add(getHtmlScript("/scripts/utils.js"))
+        includes.add(getHtmlScript("/scripts/mark.min.js"))
+        includes.add(getHtmlScript("/scripts/jquery-3.3.1.min.js"))
         for (element in includes) {
             resourceHtml = StringBuilder(resourceHtml).insert(endHeadIndex, element).toString()
         }

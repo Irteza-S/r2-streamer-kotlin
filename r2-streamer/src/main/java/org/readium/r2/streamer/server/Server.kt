@@ -80,6 +80,12 @@ abstract class AbstractServer(private var port: Int) : RouterNanoHTTPD("127.0.0.
                 .useDelimiter("\\A").next())
         addResource("utils.js", Scanner(assets.open("ReadiumCSS/utils.js"), "utf-8")
                 .useDelimiter("\\A").next())
+        addResource("mark.min.js", Scanner(assets.open("ReadiumCSS/mark.min.js"), "utf-8")
+                .useDelimiter("\\A").next())
+        addResource("jquery-3.3.1.min.js", Scanner(assets.open("ReadiumCSS/jquery-3.3.1.min.js"), "utf-8")
+                .useDelimiter("\\A").next())
+        addResource("mark.css", Scanner(assets.open("ReadiumCSS/mark.css"), "utf-8")
+                .useDelimiter("\\A").next())
         addFont("OpenDyslexic-Regular.otf", assets, context)
     }
 
